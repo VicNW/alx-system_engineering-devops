@@ -1,7 +1,8 @@
-# install flask version 2.1.0 specifically from pip3
+# creates a file in /tmp
 
-package { 'flask':
- ensure   => '2.1.0',
- provider => 'pip3',
- require  => 'Package['python-pip']
+file { '/tmp/school':
+  content =>'I love Puppet',
+  mode    => '0744',
+  owner   => 'www-data',
+  group   => 'www-data',
 }
