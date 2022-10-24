@@ -23,7 +23,7 @@ echo "server {
    }
 }" > default
 sudo mv -f default /etc/nginx/sites-available/default
-echo "user www-data;
+sudo echo "user www-data;
 worker_processes auto;
 pid /run/nginx.pid;
 include /etc/nginx/modules-enabled/*.conf;
