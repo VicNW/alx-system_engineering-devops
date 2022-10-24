@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# sets up a new 404 error page
+# sets up a new server from update to
 sudo apt-get update
 sudo apt-get install -y nginx
 echo "Hello World!" > index.html
@@ -47,6 +47,7 @@ http {
         gzip on;
         include /etc/nginx/conf.d/*.conf;
         include /etc/nginx/sites-enabled/*;
+        add_header X-Serviced-By $hostname;
 }" > nginx.conf
 mv -f nginx.conf /etc/nginx/nginx.conf
 sudo service nginx restart
